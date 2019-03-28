@@ -97,6 +97,8 @@ container-box{
 }
 
 .form-container{
+    display: flex;
+    align-content: center;
     border-radius: 0.8vw;
     border-color: argb(11,11,152,1);
     border-style: solid;
@@ -104,4 +106,16 @@ container-box{
     background-color: #fAfAfA;
     margin: 1vw;
     padding: 1vw;
+    width: 40%;
+    
+    flex-direction: column;
+}
+
+.form-group{
+    padding: 0.2vw;
+    margin: 1vw;
+}
+
+.form-item{
+    
 }
