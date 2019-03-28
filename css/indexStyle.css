@@ -1,5 +1,7 @@
 body{
     margin: 0;
+    font-family: "Tahoma", sans-serif;
+    font-size: 1.2vw;
 }
 
 container-box{
@@ -22,6 +24,7 @@ container-box{
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.3s;
+    font-size: 1.3vw;
     
         
 }
@@ -46,8 +49,26 @@ container-box{
 #main{
     transition: margin-left .5s;
     
-    padding: 20px 20px 20px 102px;;
+    padding: 20px 20px 20px 92px;;
     
+}
+
+.header{
+    display: flex;
+    
+    height: 12vw;
+    background-color: aqua;
+    
+    
+    align-items: center;
+    flex-direction: column;
+    
+    font-size: 4vw;
+    
+}
+
+.header p{
+    display: table-cell;
 }
 
 @media screen and (max-height: 450px){
@@ -62,21 +83,25 @@ container-box{
 .openMenu{
     
 
-    width: 72px;
+    width: 5%;
     height: 100%;
     writing-mode: vertical-lr;
     position: fixed;
     float: right;
     padding-top: 20px;
-    padding-right: 10px;
-    
-
+    padding-right: 0;
     background-color: rgba(11, 10, 112);
     color: #f2f2f2;
-    font-size: 60px;
+    font-size: 3.8vw;
     
 }
 
-.openMenu p{
-    writing-mode: lr-tb;
+.form-container{
+    border-radius: 0.8vw;
+    border-color: argb(11,11,152,1);
+    border-style: solid;
+    border-width: thin;
+    background-color: #fAfAfA;
+    margin: 1vw;
+    padding: 1vw;
 }

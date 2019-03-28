@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 27-Mar-2019 às 19:17
+-- Generation Time: 28-Mar-2019 às 01:19
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -98,7 +98,8 @@ CREATE TABLE `tb_funcionario` (
 -- Indexes for table `tb_carro`
 --
 ALTER TABLE `tb_carro`
-  ADD PRIMARY KEY (`nr_chassi`);
+  ADD PRIMARY KEY (`nr_chassi`),
+  ADD KEY `fk_carro_fabricante` (`id_fabricante`);
 
 --
 -- Indexes for table `tb_cliente`
@@ -127,6 +128,16 @@ ALTER TABLE `tb_funcionario`
 --
 ALTER TABLE `tb_fabricante`
   MODIFY `id_fabricante` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Limitadores para a tabela `tb_carro`
+--
+ALTER TABLE `tb_carro`
+  ADD CONSTRAINT `fk_carro_fabricante` FOREIGN KEY (`id_fabricante`) REFERENCES `tb_fabricante` (`id_fabricante`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
