@@ -4,7 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/indexStyle.css" rel="stylesheet">
+        
+        
         <script type="text/javascript" src="js/indexScript.js"></script>
+       
+        
         
     </head>
     <body>
@@ -27,16 +31,65 @@
                     
                     <div class="form-container">
                         <form name="cadCli" method="post" action="#">
-                            <div class="form-group">
-                            <label>CPF:</label>
-                            <input type="text" name="cpf" id="cpf">
-                            </div>
-                            <div class="form-group">
-                            <label>Nome:</label>
-                            <input type="text" name="cliNome" id="cliNm">
-                            </div>
-                            <label>Data de Nascimento:</label>
-                            <input type="date" name="dtNasc" id="dtNasc"><br>
+                            
+                            <table border="0" cellpadding="5" cellspacing="5">
+                                <tr>
+                                    <td>
+                                        <label>CPF:</label><br>
+                                        <input type="text" name="cpf" id="cpf" onblur="validaCpf('cpf')">
+                                        <span id="cpfError" style="display:  none;">Utilize somente números.</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Nome:</label><br>
+                                        <input type="text" name="cliNome" id="cliNm">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Data de Nascimento:</label><br>
+                                        <input type="date" name="dtNasc" id="dtNasc">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Cep:<br>
+                                        <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" onblur="pesquisaCep(this)"/></label><br />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Rua:<br>
+                                        <input name="rua" type="text" id="rua" size="60" /></label><br />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Bairro:<br>
+                                        <input name="bairro" type="text" id="bairro" size="40"/></label><br />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>Cidade:<br>
+                                        <input name="bairro" type="text" id="cidade" size="40"/></label><br />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label>UF:<br>
+                                        <input name="uf" type="text" id="uf" size="2"/></label><br />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="submit" value="Enviar">
+                                    </td>
+                                </tr>
+                            
+                            </table>
+                            
                             
                         </form>
                     </div>
@@ -49,5 +102,7 @@
                 </div>
             
         </section>
+        
+        
     </body>
 </html>
