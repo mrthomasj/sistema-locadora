@@ -32,7 +32,7 @@
                     <div class="form-container">
                         <form name="cadCli" method="post" action="#">
                             
-                            <table border="0" cellpadding="5" cellspacing="5">
+                            <table border="0" cellpadding="5" cellspacing="5" align="center">
                                 <tr>
                                     <td>
                                         <label>CPF:</label><br>
@@ -55,36 +55,45 @@
                                 <tr>
                                     <td>
                                         <label>Cep:<br>
-                                        <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" onblur="pesquisaCep(this)"/></label><br />
+                                        <input name="cep" type="text" id="cep" value=""  maxlength="9" onblur="pesquisaCep(this)"/></label><br />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
+                                    <td width="60%">
                                         <label>Rua:<br>
-                                        <input name="rua" type="text" id="rua" size="60" /></label><br />
+                                        <input name="rua" type="text" id="rua" /></label><br />
+                                    </td>
+                                    <td>
+                                        <label >
+                                            Número:<br>
+                                            <input type="text" id="nr" name="numero"/><br/>
+                                        </label>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <label>Bairro:<br>
-                                        <input name="bairro" type="text" id="bairro" size="40"/></label><br />
+                                        <input name="bairro" type="text" id="bairro"/></label><br />
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <label>Cidade:<br>
-                                        <input name="bairro" type="text" id="cidade" size="40"/></label><br />
+                                        <input name="bairro" type="text" id="cidade"/></label><br />
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <label>UF:<br>
-                                        <input name="uf" type="text" id="uf" size="2"/></label><br />
+                                        <input name="uf" type="text" id="uf" /></label><br />
                                     </td>
                                 </tr>
+                                <tr></tr>
+                                <tr></tr>
+                                <tr></tr>
                                 <tr>
                                     <td>
-                                        <input type="submit" value="Enviar">
+                                        <input type="submit" value="Enviar" class="btn">
                                     </td>
                                 </tr>
                             

@@ -1,7 +1,7 @@
 body{
     margin: 0;
     font-family: "Tahoma", sans-serif;
-    font-size: 1.2vw;
+    font-size: 1rem;
 }
 
 container-box{
@@ -20,21 +20,22 @@ container-box{
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgba(11, 10, 112);
+    background-color: #0F3AA4;
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.3s;
-    font-size: 1.3vw;
-    
+    font-size: 1.10vw;
+    font-weight: 200;
         
 }
 
 .sidenav a{
-    color: #f2f2f2;
+    color: #C8FDFF;
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     display: block;
     transition: 0.3s;
+    
     
 }
 
@@ -48,8 +49,8 @@ container-box{
 
 #main{
     transition: margin-left .5s;
-    
-    padding: 20px 20px 20px 92px;;
+    display: block;
+    padding: 20px 20px 20px 92px;
     
 }
 
@@ -83,44 +84,78 @@ container-box{
 .openMenu{
     
 
-    width: 5%;
+    width: 3%;
     height: 100%;
     writing-mode: vertical-lr;
     position: fixed;
     float: right;
     padding-top: 20px;
     padding-right: 0;
-    background-color: rgba(11, 10, 112);
-    color: #f2f2f2;
-    font-size: 3.8vw;
+    background-color: #0F3AA4 ;
+    color: #C8FDFF;
+    font-size: 2.5vw;
     
 }
 
 .form-container{
-    display: flex;
-    align-content: center;
-    border-radius: 0.8vw;
+    
+    display: block;
+    border-radius: 0.8em;
     border-color: argb(11,11,152,1);
     border-style: solid;
     border-width: thin;
     background-color: #fAfAfA;
-    margin: 1vw;
-    padding: 1vw;
-    width: 40%;
+    margin: 0.8em auto;
+    padding: 0.8em;
+    width: 30%;
+    align: center;
     
-    flex-direction: column;
+    
 }
 
 .form-group{
-    padding: 0.2vw;
-    margin: 1vw;
+    padding: 0.2em;
+    margin: 1em;
 }
 
-.form-item{
-    
-}
 
 
 td{
     height: 20;
 }
+
+.btn{
+    width: 65%;
+    height: 180%;
+    font-size: 1.2rem;
+    border-radius: 0.8em;
+    border-width: thin;
+    border-color: rgba(11, 10, 112);
+    background-color: #f2f2f2;
+}
+
+.btn:hover{
+    background-color: rgba(11, 10, 112);
+    border-color: #f2f2f2;
+    color: #f2f2f2;
+}
+
+#cpf{ width: 50%; padding: 0.3em; font-size: 0.8rem;}
+
+#cliNm{ width: 110%; padding: 0.3em; font-size: 0.8rem;}
+
+#dtNasc{ width: 60%; padding: 0.3em; font-size: 1rem;}
+
+#cep{ width: 50%; padding: 0.3em; font-size: 0.8rem;}
+
+#rua{ width: 100%; padding: 0.3em; font-size: 0.8rem;}
+
+#nr{ width: 50%; padding: 0.3em; font-size: 0.8rem;}
+
+#bairro{ width: 70%; padding: 0.3em; font-size: 0.8rem;}
+
+#cidade{ width: 90%; padding: 0.3em; font-size: 0.8rem;}
+
+#uf{ width: 20%; padding: 0.3em; font-size: 0.8rem;}
+
+
