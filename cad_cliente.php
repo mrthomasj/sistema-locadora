@@ -3,6 +3,7 @@
         <title>Home</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Cache-control" content="no-cache">
         <link href="css/indexStyle.css" rel="stylesheet">
         
         
@@ -30,7 +31,8 @@
                     </div>
                     
                     <div class="form-container">
-                        <form name="cadCli" method="post" action="#">
+                        <form name="cadCli" id="cadCli" method="post" action="index.html" onsubmit="return validaForm(this)">
+                        <form name="cadCli" id="cadCli" method="post" action="#" onsubmit="validaForm(this)">
                             
                             <table border="0" cellpadding="5" cellspacing="5" align="center">
                                 <tr>
@@ -49,13 +51,13 @@
                                 <tr>
                                     <td>
                                         <label>Data de Nascimento:</label><br>
-                                        <input type="text" name="dtNasc" id="dtNasc" required>
+                                        <input type="text" name="dtNasc" id="dtNasc" onblur="validaData('dtNasc')" required>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <label>Cep:<br>
-                                        <input name="cep" type="text" id="cep" value=""  maxlength="9" onblur="pesquisaCep(this)"/></label><br />
+                                        <input name="cep" type="text" id="cep" value=""  maxlength="9" onblur="pesquisaCep(this)" required/></label><br />
                                     </td>
                                 </tr>
                                 <tr>
@@ -66,7 +68,7 @@
                                     <td>
                                         <label >
                                             Número:<br>
-                                            <input type="text" id="nr" name="numero"/><br/>
+                                            <input type="text" id="nr" name="numero" required/><br/>
                                         </label>
                                     </td>
                                 </tr>

@@ -16,6 +16,56 @@ function closeNav(){
 
 //validation
 
+
+function validaForm(x){
+    
+    var elements = x.elements;
+    
+    for(var i = 0; elements.length; elements[i++]){
+        if(elements[i].type=="text"){
+            switch(elements[i].id){
+                case 'cpf': 
+                    if(!validaCpf(elements[i].id)){
+                                
+                                alert("Verifique o CPF!");
+                                elements[i].focus();
+                                elements[i].select();
+                                return false;
+                                
+                                
+                            }
+                    break;
+                case 'cliNome':
+                    if(!validaNome(elements[i].id)){
+                                
+                                alert("Verifique o nome digitado!\nUtilize apenas a-z, A-Z, ', - ou espaços.");
+                                elements[i].focus();
+                                elements[i].select();
+                                return false;
+                                
+                                
+                            }
+                    break;
+                    
+                case 'dtNasc':
+                    if(!validaData(elements[i].id)){
+                                
+                                alert("Verifique a data de nascimento digitada.");
+                                elements[i].focus();
+                                elements[i].select();
+                                return false;
+                                
+                                
+                            }
+                    break;
+                
+            }
+        }
+    }
+    
+    
+}
+
 function validaVazio(x){
     
     var ref = document.getElementById(x).value;
@@ -35,15 +85,45 @@ function validaVazio(x){
 function validaData(x){
     
     var re = /^\d{8}$/;
+    var rex = /[0-9]{2}\/[0-9]{2}\/[0-9]{4}/;
     var data = document.getElementById(x).value;
+    var dtstr;
     if(re.test(data)){
-        data = data.substr(0,2) + '/' + data.substr(2,2) + '/' + data.substr(4,2);
-        document.getElementById(x).style.box-shadow = '0px 0px 2px #A5D644';
-        return true;
+        data = data.substr(0,2) + '/' + data.substr(2,2) + '/' + data.substr(4,4);
+        document.getElementById(x).value = data;
+        document.getElementById(x).style.borderColor = 'inherit';
+        dtstr = data.substr(4,4)+ "-" + data.substr(2,2) + "-" + data.substr(0,2);
+        if(Date.parse(dtstr)){
+           return true;
+        }
+        else{
+            return false;
+        }
+        
     }
     else{
-        
+        if(rex.test(data)){
+            document.getElementById(x).style.borderColor = 'inherit';
+            dtstr = data.substr(6,4)+ "-" + data.substr(3,2) + "-" + data.substr(0,2);
+            if(Date.parse(dtstr)){
+               return true;
+            }
+        }
         return false;
+    }
+    
+}
+
+function validaNome(x){
+    
+    var re = /\p{L}\s?'?-?/g;
+    var nm = document.getElementById(x).value;
+    
+    if(!re.test(nm)){
+        
+            document.getElementById(x).style['boxShadow'] =  "0 0 2px #DB1F3D";
+            document.getElementById(x).style.borderColor = '#DB1F3D';
+        
     }
     
 }
@@ -67,17 +147,20 @@ function validaCpf(x){
         return true;*/
         
             if(TestaCPF(strCPF)){
-                document.getElementById(x).style['boxShadow'] =  "1px 1px 2px #A5D644";
+                document.getElementById(x).style['boxShadow'] =  "0 0 2px #A5D644";
+                document.getElementById(x).style.borderColor = '#A5D644';
                 document.getElementById(x+'Error').style.display = 'none';
                 return true;
             }
             else{
+                document.getElementById(x).style['boxShadow'] =  "0 0 2px #DB1F3D";
                 document.getElementById(x).style.borderColor = '#DB1F3D';
                 document.getElementById(x+'Error').style.display = 'block';
                 document.getElementById(x+'Error').innerHTML = 'CPF inválido!'
                 return false;
             }
         }else{
+            document.getElementById(x).style['boxShadow'] =  "0 0 2px #DB1F3D";
             document.getElementById(x).style.borderColor = '#DB1F3D';
             document.getElementById(x+'Error').style.display = 'block';
             document.getElementById(x+'Error').innerHTML = 'Utilize somente números!'
@@ -131,6 +214,11 @@ function meu_callback(content){
         document.getElementById('bairro').value=(content.bairro);
         document.getElementById('cidade').value=(content.localidade);
         document.getElementById('uf').value=(content.uf);
+        
+        document.getElementById('rua').disabled=true;
+        document.getElementById('bairro').disabled=true;
+        document.getElementById('cidade').disabled=true;
+        document.getElementById('uf').disabled=true;
     }
     else{
         limpaFormularioCep();
