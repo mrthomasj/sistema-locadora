@@ -1,3 +1,5 @@
+//sidenav management
+
 function openNav(){
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "180px";
@@ -12,12 +14,36 @@ function closeNav(){
 }
 
 
+//validation
+
 function validaVazio(x){
     
     var ref = document.getElementById(x).value;
     
     if(ref==""){
         document.getElementById(x).style.borderColor = '#DB1F3D';
+        return false;
+    }
+    else{
+        document.getElementById(x).style.borderColor = 'inherit';
+        return true;
+    }
+    
+}
+
+
+function validaData(x){
+    
+    var re = /^\d{8}$/;
+    var data = document.getElementById(x).value;
+    if(re.test(data)){
+        data = data.substr(0,2) + '/' + data.substr(2,2) + '/' + data.substr(4,2);
+        document.getElementById(x).style.box-shadow = '0px 0px 2px #A5D644';
+        return true;
+    }
+    else{
+        
+        return false;
     }
     
 }
@@ -27,7 +53,12 @@ function validaCpf(x){
     
     var re = /^([0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2})$/;
     strCPF = document.getElementById(x).value;
-    if(re.test(strCPF)){
+    if(strCPF==""){
+        document.getElementById(x+'Error').style.display = 'none';
+        document.getElementById(x).style.borderColor = 'inherit';
+        return false;
+    }else{
+        if(re.test(strCPF)){
         /*if(strCPF.length == 15){
             strCPF = strCPF.substr(0, 3) + strCPF.substr(4,3) + strCPF.substr(8,3) + strCPF.substr(12);
             document.getElementById(x).value = strCPF;
@@ -35,19 +66,23 @@ function validaCpf(x){
         document.getElementById(x).style.borderColor = '#A5D644';
         return true;*/
         
-        if(TestaCPF(strCPF)){
-            document.getElementById(x).style.borderColor = '#A5D644';
-            return true;
-        }
-        else{
+            if(TestaCPF(strCPF)){
+                document.getElementById(x).style['boxShadow'] =  "1px 1px 2px #A5D644";
+                document.getElementById(x+'Error').style.display = 'none';
+                return true;
+            }
+            else{
+                document.getElementById(x).style.borderColor = '#DB1F3D';
+                document.getElementById(x+'Error').style.display = 'block';
+                document.getElementById(x+'Error').innerHTML = 'CPF inválido!'
+                return false;
+            }
+        }else{
             document.getElementById(x).style.borderColor = '#DB1F3D';
             document.getElementById(x+'Error').style.display = 'block';
+            document.getElementById(x+'Error').innerHTML = 'Utilize somente números!'
             return false;
         }
-    }else{
-        document.getElementById(x).style.borderColor = '#DB1F3D';
-        document.getElementById(x+'Error').style.display = 'block';
-        return false;
     }
     
     
@@ -75,6 +110,9 @@ function TestaCPF(strCPF) {
     return true;
 }
 
+
+
+//CEP query
 
 
 function limpaFormularioCep(){

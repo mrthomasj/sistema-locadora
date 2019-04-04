@@ -1,7 +1,7 @@
 body{
     margin: 0;
     font-family: "Tahoma", sans-serif;
-    font-size: 1rem;
+    font-size: 1vw;
 }
 
 container-box{
@@ -24,7 +24,7 @@ container-box{
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.3s;
-    font-size: 1.10vw;
+    font-size: 1.1rem;
     font-weight: 200;
         
 }
@@ -107,8 +107,9 @@ container-box{
     background-color: #fAfAfA;
     margin: 0.8em auto;
     padding: 0.8em;
-    width: 30%;
+    width: 45%;
     align: center;
+    
     
     
 }
@@ -151,6 +152,8 @@ td{
 #rua{ width: 100%; padding: 0.3em; font-size: 0.8rem;}
 
 #nr{ width: 50%; padding: 0.3em; font-size: 0.8rem;}
+
+#cmpl{ width: 60%; padding: 0.3em; font-size: 0.8rem;}
 
 #bairro{ width: 70%; padding: 0.3em; font-size: 0.8rem;}
 

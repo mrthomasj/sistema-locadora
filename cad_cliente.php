@@ -36,20 +36,20 @@
                                 <tr>
                                     <td>
                                         <label>CPF:</label><br>
-                                        <input type="text" name="cpf" id="cpf" onblur="validaCpf('cpf')">
+                                        <input type="text" name="cpf" id="cpf" onblur="validaCpf('cpf')" required>
                                         <span id="cpfError" style="display:  none;">Utilize somente números.</span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <label>Nome:</label><br>
-                                        <input type="text" name="cliNome" id="cliNm">
+                                        <input type="text" name="cliNome" id="cliNm" required>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <label>Data de Nascimento:</label><br>
-                                        <input type="date" name="dtNasc" id="dtNasc">
+                                        <input type="text" name="dtNasc" id="dtNasc" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -68,6 +68,12 @@
                                             Número:<br>
                                             <input type="text" id="nr" name="numero"/><br/>
                                         </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="60%">
+                                        <label>Complemento:<br>
+                                        <input name="cmpl" type="text" id="cmpl" /></label><br />
                                     </td>
                                 </tr>
                                 <tr>
@@ -102,11 +108,6 @@
                             
                         </form>
                     </div>
-                    
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nisl nunc, lacinia at maximus ac, bibendum ut nisl. Integer volutpat ante nibh, non ullamcorper dui bibendum ac. Sed congue ornare massa, ut accumsan mauris condimentum eu. Morbi tincidunt, orci id molestie luctus, tortor velit aliquet est, ut dictum mauris ipsum quis nulla. Sed pharetra id massa non cursus. Cras dui purus, eleifend in tincidunt vel, tempor sit amet nisl. In maximus enim a enim dapibus, vel dictum ex iaculis. Cras risus purus, semper ac volutpat euismod, elementum varius felis. Mauris eget dolor nisl. Nullam quis augue eget augue vulputate iaculis vel et lorem. Duis aliquet diam gravida, maximus ex non, placerat turpis. Duis efficitur efficitur luctus. Sed ipsum nisi, scelerisque pellentesque massa et, sodales maximus dolor. Sed sed nisi hendrerit, vehicula odio vel, eleifend eros. Donec hendrerit eleifend est, vel pulvinar enim commodo consequat. Phasellus finibus egestas purus, eu vestibulum eros semper sed.
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nisl nunc, lacinia at maximus ac, bibendum ut nisl. Integer volutpat ante nibh, non ullamcorper dui bibendum ac. Sed congue ornare massa, ut accumsan mauris condimentum eu. Morbi tincidunt, orci id molestie luctus, tortor velit aliquet est, ut dictum mauris ipsum quis nulla. Sed pharetra id massa non cursus. Cras dui purus, eleifend in tincidunt vel, tempor sit amet nisl. In maximus enim a enim dapibus, vel dictum ex iaculis. Cras risus purus, semper ac volutpat euismod, elementum varius felis. Mauris eget dolor nisl. Nullam quis augue eget augue vulputate iaculis vel et lorem. Duis aliquet diam gravida, maximus ex non, placerat turpis. Duis efficitur efficitur luctus. Sed ipsum nisi, scelerisque pellentesque massa et, sodales maximus dolor. Sed sed nisi hendrerit, vehicula odio vel, eleifend eros. Donec hendrerit eleifend est, vel pulvinar enim commodo consequat. Phasellus finibus egestas purus, eu vestibulum eros semper sed.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nisl nunc, lacinia at maximus ac, bibendum ut nisl. Integer volutpat ante nibh, non ullamcorper dui bibendum ac. Sed congue ornare massa, ut accumsan mauris condimentum eu. Morbi tincidunt, orci id molestie luctus, tortor velit aliquet est, ut dictum mauris ipsum quis nulla. Sed pharetra id massa non cursus. Cras dui purus, eleifend in tincidunt vel, tempor sit amet nisl. In maximus enim a enim dapibus, vel dictum ex iaculis. Cras risus purus, semper ac volutpat euismod, elementum varius felis. Mauris eget dolor nisl. Nullam quis augue eget augue vulputate iaculis vel et lorem. Duis aliquet diam gravida, maximus ex non, placerat turpis. Duis efficitur efficitur luctus. Sed ipsum nisi, scelerisque pellentesque massa et, sodales maximus dolor. Sed sed nisi hendrerit, vehicula odio vel, eleifend eros. Donec hendrerit eleifend est, vel pulvinar enim commodo consequat. Phasellus finibus egestas purus, eu vestibulum eros semper sed.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nisl nunc, lacinia at maximus ac, bibendum ut nisl. Integer volutpat ante nibh, non ullamcorper dui bibendum ac. Sed congue ornare massa, ut accumsan mauris condimentum eu. Morbi tincidunt, orci id molestie luctus, tortor velit aliquet est, ut dictum mauris ipsum quis nulla. Sed pharetra id massa non cursus. Cras dui purus, eleifend in tincidunt vel, tempor sit amet nisl. In maximus enim a enim dapibus, vel dictum ex iaculis. Cras risus purus, semper ac volutpat euismod, elementum varius felis. Mauris eget dolor nisl. Nullam quis augue eget augue vulputate iaculis vel et lorem. Duis aliquet diam gravida, maximus ex non, placerat turpis. Duis efficitur efficitur luctus. Sed ipsum nisi, scelerisque pellentesque massa et, sodales maximus dolor. Sed sed nisi hendrerit, vehicula odio vel, eleifend eros. Donec hendrerit eleifend est, vel pulvinar enim commodo consequat. Phasellus finibus egestas purus, eu vestibulum eros semper sed.</p>
                     
                 </div>
             
