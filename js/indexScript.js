@@ -60,6 +60,11 @@ function validaForm(x){
                     break;
                 
             }
+            
+            document.getElementById('rua').disabled = false;
+            document.getElementById('bairro').disabled = false;
+            document.getElementById('cidade').disabled = false;
+            document.getElementById('uf').disabled = false;
         }
     }
     

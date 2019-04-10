@@ -1,120 +1,108 @@
 <html>
     <head>
-        <title>Home</title>
+        <title>
+            Cadastro de Clientes
+        </title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Cache-control" content="no-cache">
         <link href="css/indexStyle.css" rel="stylesheet">
-        
-        
-        <script type="text/javascript" src="js/indexScript.js"></script>
-       
-        
-        
     </head>
     <body>
-        <section class="container-box">
-                <div onclick="openNav()" class="openMenu">MENU</div>
-                <div id="mySidenav" class="sidenav">
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <a href="cad_cliente.php">Cadastro de cliente</a>
-                    <a href="#">Cadastro de veículo</a>
-                    <a href="#">Consulta de locação</a>
-                    <a href="#">Agendamento de locação</a>
-                </div>
-                
-            
-            
-                <div id="main">
-                    <div class="header">
-                        <p>Cadastro de Clientes</p>
-                    </div>
-                    
-                    <div class="form-container">
-                        <form name="cadCli" id="cadCli" method="post" action="index.html" onsubmit="return validaForm(this)">
-                        <form name="cadCli" id="cadCli" method="post" action="#" onsubmit="validaForm(this)">
-                            
-                            <table border="0" cellpadding="5" cellspacing="5" align="center">
-                                <tr>
-                                    <td>
-                                        <label>CPF:</label><br>
-                                        <input type="text" name="cpf" id="cpf" onblur="validaCpf('cpf')" required>
-                                        <span id="cpfError" style="display:  none;">Utilize somente números.</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label>Nome:</label><br>
-                                        <input type="text" name="cliNome" id="cliNm" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label>Data de Nascimento:</label><br>
-                                        <input type="text" name="dtNasc" id="dtNasc" onblur="validaData('dtNasc')" required>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label>Cep:<br>
-                                        <input name="cep" type="text" id="cep" value=""  maxlength="9" onblur="pesquisaCep(this)" required/></label><br />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td width="60%">
-                                        <label>Rua:<br>
-                                        <input name="rua" type="text" id="rua" /></label><br />
-                                    </td>
-                                    <td>
-                                        <label >
-                                            Número:<br>
-                                            <input type="text" id="nr" name="numero" required/><br/>
-                                        </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td width="60%">
-                                        <label>Complemento:<br>
-                                        <input name="cmpl" type="text" id="cmpl" /></label><br />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label>Bairro:<br>
-                                        <input name="bairro" type="text" id="bairro"/></label><br />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label>Cidade:<br>
-                                        <input name="bairro" type="text" id="cidade"/></label><br />
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label>UF:<br>
-                                        <input name="uf" type="text" id="uf" /></label><br />
-                                    </td>
-                                </tr>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr></tr>
-                                <tr>
-                                    <td>
-                                        <input type="submit" value="Enviar" class="btn">
-                                    </td>
-                                </tr>
-                            
-                            </table>
-                            
-                            
-                        </form>
-                    </div>
-                    
-                </div>
-            
-        </section>
+        <table border="0" cellpadding="3" cellspacing="0" width="100%">
         
+            <tr>
+                <td height="30" bgcolor="#8CDAFF">
+                    <b>Cadastro de clientes</b>
+                </td>
+                <td align="right" bgcolor="#8CDAFF">
+                    <?=date("d-m-Y H:i:s")?>&nbsp;
+                </td>
+            </tr>
         
+        </table>
+        
+        <?php
+                    $erro=Array();
+            
+                    foreach($_POST as $chv => $vlr){
+                        if($vlr=""){
+                            $erro[]= "O campo " . $chv . " não foi informado.";
+                        }
+                    }
+                    
+                    if(sizeOf($erro)==0){
+                        try{
+                            intval($_POST['cliCpf']);
+                        }
+                        catch(Exception $e){
+                            $erro[] = "CPF deve conter somente números.";
+                        }
+                        
+                        preg_match_all("/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.\'-]+$/u", $_POST['cliNome'], $matches);
+                        
+                        
+                        try{
+                                if(sizeOf($matches)==0)
+                                    $erro[]="Verifique o nome digitado! Utilize apenas a-z, A-Z, ', - ou espaços.";
+                        }
+                        catch(Exception $e){
+                            
+                        }
+                        
+                        
+                        
+                        //$_POST['dtNasc']
+                        
+                        $dtNasc = str_replace("/", "-", $_POST['cliDtNasc']);
+                        
+                        try{
+                            
+                            $timestamp =  strtotime($dtNasc);
+                            
+                            $ymd = date("Y-m-d", $timestamp);
+                            
+                        }
+                        catch(Exception $e){
+                            
+                            $erro[] = "Verifique a data de nascimento digitada.";
+                        }
+                        
+                        
+                    }
+                    
+                    
+                    if(sizeOf($erro)==0){
+                        
+                        echo '<p align="left"><font color="navy"><b>';
+                        echo 'Dados informados no Cadastro:</b></font></p>';
+                        echo '<table border="0" cellpaddin="5" cellspacing="0">';
+                        
+                        reset($_POST);
+                        
+                        foreach($_POST as $chv=>$vlr){
+                            if(substr($chv,0,3)=="cli"){
+                                echo "<tr><td>" . ucfirst(strtolower(substr($chv,3))) . "</td>";
+                                echo "<td><b>" . $vlr . "</b></td></tr>\n";
+                            }
+                        }
+                        echo '<tr><td height="60" valign="bottom"><b>Obrigado!</b></td></tr>';
+                        echo "</table>";
+                        
+                    }else{
+                        
+                        echo '<p align="center"><font color="red"><b>';
+                        foreach($erro as $vlr){
+                            echo $vlr . "<br>";
+                            echo '</b></font>';
+                            echo '<a href="cad_cliente.html">Voltar</a></p>';
+                    
+                        }
+                        
+                    }
+                    
+        ?>
+    
     </body>
+
 </html>
